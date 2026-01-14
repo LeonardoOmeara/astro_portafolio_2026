@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Aquí también podemos definir el color de fondo por defecto */
+@layer base {
+  body {
+    @apply bg-[#050505] text-neutral-300;
+  }
+}

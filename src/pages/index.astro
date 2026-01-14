@@ -1,34 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+// Importa tu imagen aquí (asegúrate que el nombre coincida con tu archivo en src/assets/)
+import capriImg from '../assets/cabra1.jpeg'; 
 ---
 
 <Layout title="Leonardo Omeara | Data Analyst & Developer">
-	<main class="max-w-4xl mx-auto px-6 pt-32">
-		
-		<header class="space-y-6">
-			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
-				<span class="relative flex h-2 w-2">
-					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-					<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-				</span>
-				Disponible para nuevos retos
-			</div>
-			
-			<h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
-				Desarrollo con <br/> <span class="text-blue-500">sentido de datos.</span>
-			</h1>
-			
-			<p class="text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed">
-				Analista de datos y desarrollador freelance. Especializado en aplicaciones rápidas con <span class="text-white">Flutter</span> y soluciones web modernas.
-			</p>
-		</header>
+  <Navbar />
+  
+  <main class="max-w-5xl mx-auto px-6 pt-32">
+    <header class="py-20 space-y-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
+        Analista de datos <br/> <span class="text-blue-500">& Developer.</span>
+      </h1>
+      <p class="text-lg text-neutral-400 max-w-xl">
+        Construyendo herramientas eficientes. De la interpretación de datos a la creación de aplicaciones nativas fluidas.
+      </p>
+    </header>
 
-		<section class="mt-24">
-			<h2 class="text-2xl font-semibold text-white mb-8 italic opacity-50">Proyectos seleccionados _</h2>
-			<div class="grid gap-12">
-				<p class="text-neutral-500">Configurando galería de proyectos...</p>
-			</div>
-		</section>
+    <section id="proyectos" class="py-20">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
+        Proyectos Destacados _
+      </h2>
 
-	</main>
+      <div class="flex flex-col">
+        <ProjectCard 
+          title="CABRapp - Sistema de Inventario Caprino"
+          description="App móvil de alto rendimiento para gestión ganadera. Incluye genealogía compleja, registro fotográfico optimizado y base de datos sincronizada con Supabase. Optimizada para carga instantánea de activos visuales."
+          tags={["Flutter", "Supabase", "Dart", "Autenticación"]}
+          image={capriImg}
+        />
+        <ProjectCard 
+          title="Sitio Web Escondite para dos"
+          description=""
+          tags={["HTML", "CSS", "JavaScript", "Data Optimization"]}
+          image={capriImg}
+        />
+
+        </div>
+    </section>
+  </main>
 </Layout>
