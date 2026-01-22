@@ -46,7 +46,7 @@ export const ui = {
   en: {
     "nav.projects": "Projects",
     "nav.about": "About me",
-    "hero.title": "Software developer / Data Analyst",
+    "hero.title": "Software Developer / Data Analyst",
     "hero.subtitle":
       "2 years of experience as a Data Analyst and Freelance Developer since 2022. Building high-performance applications with Flutter and modern web solutions.",
     "projects.title": "Featured Projects",
