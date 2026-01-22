@@ -11,7 +11,7 @@ export const ui = {
     "nav.about": "Sobre mí",
     "hero.title": "Desarrollador de software / analista de datos",
     "hero.subtitle":
-      "Experiencia de 2 años como Analista de datos y desarrollador freelance desde el 2023. Aplicaciones rápidas con Flutter y soluciones web modernas.",
+      "Experiencia de 2 años como Analista de datos y desarrollador freelance desde el 2022. Aplicaciones rápidas con Flutter y soluciones web modernas.",
     "projects.title": "Proyectos Destacados",
 
     "project.capri.title": "CABRApp (Sistema de Inventario Caprino)",
@@ -48,7 +48,7 @@ export const ui = {
     "nav.about": "About me",
     "hero.title": "Software developer / Data analyst",
     "hero.subtitle":
-      "2 years of experience as a Data Analyst and Freelance Developer since 2023. Building high-performance applications with Flutter and modern web solutions.",
+      "2 years of experience as a Data Analyst and Freelance Developer since 2022. Building high-performance applications with Flutter and modern web solutions.",
     "projects.title": "Featured Projects",
 
     "project.capri.title": "CABRApp (Caprine Inventory System)",
