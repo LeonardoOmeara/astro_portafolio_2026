@@ -1,19 +1,30 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { useTranslations } from '../../i18n/utils';
-import CABRAppInicio from '../../assets/cabra2.jpeg';
-import esconditeWebInicio from '../../assets/escritorio_inicio.jpeg'
-import Skills from '../../components/Skills.astro'
-import ExperienceItem from '../../components/ExperienceItem.astro';
+import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { useTranslations } from "../../i18n/utils";
+import CABRAppInicio from "../../assets/cabra2.jpeg";
+import esconditeWebInicio from "../../assets/escritorio_inicio.jpeg";
+import Skills from "../../components/Skills.astro";
+import ExperienceItem from "../../components/ExperienceItem.astro";
+
+import cabrappPrincipal from "../../assets/cabrapp_portrait_main.png";
+import cabrapp3Devices from "../../assets/cabrapp_portrait_3_devices.png"; // Captura extra
+import cabrapp_2 from "../../assets/cabrapp_2.png";
+import cabrapp_3 from "../../assets/cabrapp_3.png";
+import cabrapp_4 from "../../assets/cabrapp_4.png";
+
+import esconditePrincipal from "../../assets/escondite_portrait_desktop_5_inclined.png";
+import escondite_1 from "../../assets/escondite_portrait_desktop_1.png";
+import escondite_2 from "../../assets/escondite_portrait_desktop_2.png";
+import escondite_3 from "../../assets/escondite_portrait_desktop_3.png";
+import escondite_4 from "../../assets/escondite_portrait_mobile_1.png";
+import escondite_5 from "../../assets/escondite_portrait_mobile_2.png";
+import escondite_6 from "../../assets/escondite_portrait_mobile_3.png";
 
 
 // 1. Definimos qué idiomas existen para que Astro genere las páginas
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'en' } },
-  ];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
 // 2. Obtenemos el idioma de la URL actual
@@ -24,100 +35,200 @@ const t = useTranslations(lang as any);
 <Layout title="Leonardo Omeara | Portfolio">
   <main class="max-w-5xl mx-auto px-6 pt-32">
     <header class="py-20 space-y-6">
-      <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
-        {t('hero.title')}
+      <h1
+        class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+      >
+        {t("hero.title")}
       </h1>
       <p class="text-lg text-neutral-400 max-w-xl">
-        {t('hero.subtitle')}
+        {t("hero.subtitle")}
       </p>
     </header>
 
-    <section id="proyectos" class="py-20">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-        {t('projects.title')} _
+    <section id="proyectos" class="py-20 space-y-7">
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("projects.title")} _
       </h2>
 
-        <ProjectCard 
-      title={t('project.capri.title')}
-      description={t('project.capri.desc')}
-      tags={["Flutter", "Supabase", "Dart"]}
-      image={CABRAppInicio}
-  />
-      <ProjectCard 
-          title={t('project.shortfilm.title')}
-          description={t('project.shortfilm.desc')}
-          tags={["HTML", "CSS", "JavaScript"]}
-          image={esconditeWebInicio}
-        />
+      <ProjectCard
+        title={t("project.capri.title")}
+        description={t("project.capri.desc")}
+        tags={["Flutter", "Supabase", "Dart"]}
+        image={cabrapp3Devices}
+        galleryImages={[cabrappPrincipal, cabrapp_2, cabrapp_3, cabrapp_4]}
+      />
+      <ProjectCard
+        title={t("project.shortfilm.title")}
+        description={t("project.shortfilm.desc")}
+        tags={["HTML", "CSS", "JavaScript"]}
+        image={esconditePrincipal}
+        galleryImages={[escondite_1, escondite_2,escondite_3, escondite_4, escondite_5, escondite_6 ]}
+        link="https://leonardoomeara.github.io/EsconditeParaDos/"
+      />
     </section>
 
+    <section id="habilidades" class="py-24 border-t border-white/5">
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("skills.title")} _
+      </h2>
 
+      <div class="space-y-16">
+        <div class="space-y-6">
+          <h3
+            class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4"
+          >
+            {t("skills.dev")}
+          </h3>
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+            <Skills icon="simple-icons:flutter" name="Flutter" />
+            <Skills icon="simple-icons:react" name="React" />
+            <Skills icon="simple-icons:nextdotjs" name="Next.js" />
+            <Skills icon="simple-icons:astro" name="Astro" />
+            <Skills icon="simple-icons:javascript" name="JavaScript" />
+            <Skills icon="simple-icons:typescript" name="TypeScript" />
+            <Skills icon="simple-icons:tailwindcss" name="Tailwind" />
+            <Skills icon="simple-icons:vite" name="Vite" />
+          </div>
+        </div>
 
-<section class="py-24 border-t border-white/5">
-  <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-    {t('skills.title')} _
-  </h2>
-
-  <div class="space-y-16">
-    <div class="space-y-6">
-      <h3 class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4">{t('skills.dev')}</h3>
-      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
-        <Skills icon="simple-icons:flutter" name="Flutter" />
-        <Skills icon="simple-icons:react" name="React" />
-        <Skills icon="simple-icons:nextdotjs" name="Next.js" />
-        <Skills icon="simple-icons:astro" name="Astro" />
-        <Skills icon="simple-icons:javascript" name="JavaScript" />
-        <Skills icon="simple-icons:typescript" name="TypeScript" />
-        <Skills icon="simple-icons:tailwindcss" name="Tailwind" />
-        <Skills icon="simple-icons:vite" name="Vite" />
+        <div class="space-y-6">
+          <h3
+            class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4"
+          >
+            {t("skills.data")}
+          </h3>
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+            <Skills icon="simple-icons:python" name="Python" />
+            <Skills icon="simple-icons:mysql" name="MySQL" />
+            <Skills icon="simple-icons:postgresql" name="PostgreSQL" />
+            <Skills icon="simple-icons:supabase" name="Supabase" />
+            <Skills icon="simple-icons:powerbi" name="Power BI" />
+            <Skills icon="simple-icons:sqlite" name="SQL" />
+            <Skills icon="simple-icons:git" name="Git" />
+            <Skills icon="simple-icons:amazons3" name="APIs" />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <section id="experiencia" class="py-24 border-t border-white/5">
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("exp.title")} _
+      </h2>
 
-    <div class="space-y-6">
-      <h3 class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4">{t('skills.data')}</h3>
-      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
-        <Skills icon="simple-icons:python" name="Python" />
-        <Skills icon="simple-icons:mysql" name="MySQL" />
-        <Skills icon="simple-icons:postgresql" name="PostgreSQL" />
-        <Skills icon="simple-icons:supabase" name="Supabase" />
-        <Skills icon="simple-icons:powerbi" name="Power BI" />
-        <Skills icon="simple-icons:sqlite" name="SQL" />
-        <Skills icon="simple-icons:git" name="Git" />
-        <Skills icon="simple-icons:amazons3" name="APIs" />
+      <div class="max-w-3xl">
+        <ExperienceItem
+          date="02/2024 — 12/2024"
+          title={t("exp.adres.role")}
+          company="ADRES (Administradora de los Recursos del Sistema General de Seguridad Social en Salud)"
+          description={t("exp.adres.desc")}
+          stack={["SQL", "Python", "Power BI"]}
+        />
+
+        <ExperienceItem
+          date="01/2022 — 07/2022"
+          title={t("exp.sbd.role")}
+          company="Stanley Black & Decker"
+          description={t("exp.sbd.desc")}
+          stack={["Python", "SQL", "APIs", "SSMS"]}
+        />
+
+        <ExperienceItem
+          date="02/2023 — Actual"
+          title={t("exp.freelance.role")}
+          company="Freelance"
+          description={t("exp.freelance.desc")}
+          stack={["JavaScript", "HTML", "CSS"]}
+        />
       </div>
-    </div>
-  </div>
-</section>
-<section id="experiencia" class="py-24 border-t border-white/5">
-  <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-    {t('exp.title')} _
-  </h2>
+    </section>
 
-  <div class="max-w-3xl">
-    <ExperienceItem 
-      date="02/2024 — 12/2024"
-      title={t('exp.adres.role')}
-      company="ADRES (Administradora de los Recursos del Sistema General de Seguridad Social en Salud)"
-      description={t('exp.adres.desc')}
-      stack={["SQL", "Python", "Power BI"]}
-    />
+    <section id="contacto" class="py-32 border-t border-white/5">
+      <div class="max-w-3xl mx-auto text-center space-y-8">
+        <h2
+          class="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] italic"
+        >
+          {t("contact.title")} _
+        </h2>
 
-    <ExperienceItem 
-      date="01/2022 — 07/2022"
-      title={t('exp.sbd.role')}
-      company="Stanley Black & Decker"
-      description={t('exp.sbd.desc')}
-      stack={["Python", "SQL", "APIs", "SSMS"]}
-    />
+        <h3
+          class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+        >
+          {t("contact.subtitle")}
+        </h3>
 
-    <ExperienceItem 
-      date="02/2021 — 10/2021"
-      title={t('exp.freelance.role')}
-      company="Freelance"
-      description={t('exp.freelance.desc')}
-      stack={["JavaScript", "HTML", "CSS"]}
-    />
-  </div>
-</section>
+        <p class="text-neutral-400 text-lg max-w-md mx-auto leading-relaxed">
+          {t("contact.description")}
+        </p>
+
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-4 pt-8"
+        >
+          <a
+            href="https://www.linkedin.com/in/leonardo-omeara/"
+            target="_blank"
+            class="group relative px-8 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 w-full md:w-auto"
+          >
+            <span class="relative z-10">{t("contact.button.chat")}</span>
+            <div
+              class="absolute inset-0 bg-blue-500 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"
+            >
+            </div>
+          </a>
+
+        </div>
+
+        <form
+          action="https://formspree.io/f/mqeevpgp"
+          method="POST"
+          class="max-w-md mx-auto space-y-4 mt-8"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder={lang === "es" ? "Tu correo" : "Your email"}
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <textarea
+            name="message"
+            placeholder={lang === "es"
+              ? "¿En qué puedo ayudarte?"
+              : "How can I help you?"}
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white h-32 focus:outline-none focus:border-blue-500 transition-colors"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-blue-500 hover:text-white transition-all"
+          >
+            {lang === "es" ? "Enviar mensaje" : "Send message"}
+          </button>
+        </form>
+
+        <div
+          class="pt-20 flex justify-center gap-8 border-t border-white/5 mt-20"
+        >
+          <a
+            href="https://github.com/LeonardoOmeara"
+            target="_blank"
+            class="text-neutral-500 hover:text-white text-sm font-mono transition-colors"
+            >GITHUB</a
+          >
+          <a
+            href="https://www.linkedin.com/in/leonardo-omeara/"
+            target="_blank"
+            class="text-neutral-500 hover:text-white text-sm font-mono transition-colors"
+            >LINKEDIN</a
+          >
+          <span class="text-neutral-700 text-sm font-mono">/ 2026</span>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>

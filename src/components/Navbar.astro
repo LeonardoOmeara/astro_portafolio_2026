@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
-// Detectamos el idioma actual desde la URL
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -14,9 +13,18 @@ const t = useTranslations(lang);
     </a>
     
     <div class="flex gap-8 items-center">
-      <div class="hidden md:flex gap-6">
-        <a href={`/${lang}/#proyectos`} class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
-          {t('nav.projects')}
+      <div class="hidden md:flex gap-8">
+        <a href={`/${lang}/#proyectos`} class="text-xs font-mono font-bold text-neutral-400 hover:text-white transition-colors tracking-widest">
+          {t('nav.projects').toUpperCase()}
+        </a>
+        <a href={`/${lang}/#habilidades`} class="text-xs font-mono font-bold text-neutral-400 hover:text-white transition-colors tracking-widest">
+          {lang === 'es' ? 'HABILIDADES' : 'SKILLS'}
+        </a>
+        <a href={`/${lang}/#experiencia`} class="text-xs font-mono font-bold text-neutral-400 hover:text-white transition-colors tracking-widest">
+          {lang === 'es' ? 'EXPERIENCIA' : 'EXPERIENCE'}
+        </a>
+        <a href={`/${lang}/#contacto`} class="text-xs font-mono font-bold text-neutral-400 hover:text-white transition-colors tracking-widest">
+          {lang === 'es' ? 'CONTACTO' : 'CONTACT'}
         </a>
       </div>
       
@@ -24,7 +32,7 @@ const t = useTranslations(lang);
         href={lang === 'es' ? '/en/' : '/es/'} 
         class="text-[10px] font-mono font-bold tracking-widest text-blue-400 border border-blue-400/30 px-2 py-1 rounded hover:bg-blue-400 hover:text-black transition-all"
       >
-        {lang === 'es' ? 'SWITCH TO ENGLISH' : 'CAMBIAR A ESPAÑOL'}
+        {lang === 'es' ? 'EN' : 'ES'}
       </a>
     </div>
 
