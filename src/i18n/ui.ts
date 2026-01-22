@@ -27,10 +27,10 @@ export const ui = {
     "skills.data": "Análisis de Datos & Backend",
 
     "exp.title": "Trayectoria Profesional",
-    "exp.adres.role": "Software Developer & Data Analyst",
+    "exp.adres.role": "Desarrollador de Software & Analista de datos",
     "exp.adres.desc":
       "Lideré la creación de scripts SQL para auditorías de salud, detectando +50,000 procesos. Optimicé dashboards en Power BI reduciendo retrasos en un 10%.",
-    "exp.sbd.role": "Automation Intern",
+    "exp.sbd.role": "Practicante en Automatizaciones",
     "exp.sbd.desc":
       "Desarrollé scripts en Python para extracción de datos vía API y gestioné bases de datos SQL para el monitoreo de bots de alto rendimiento.",
     "exp.freelance.role": "Developer Freelance",
@@ -39,7 +39,7 @@ export const ui = {
     'contact.title': '¿Tienes un proyecto en mente?',
     'contact.subtitle': 'TRABAJEMOS JUNTOS',
     'contact.description': 'Actualmente estoy disponible para nuevos proyectos freelance y roles de análisis de datos.',
-    'contact.button.chat': 'HABLEMOS POR LINKEDIN',
+    'contact.button.chat': 'Hablemos por LinkedIn',
     'contact.button.mail': 'ENVIAR UN CORREO',
   },
 
@@ -76,7 +76,7 @@ export const ui = {
     'contact.title': 'Have a project in mind?',
     'contact.subtitle': "LET'S WORK TOGETHER",
     'contact.description': 'I am currently available for new freelance projects and data analysis roles.',
-    'contact.button.chat': "LET'S CHAT ON LINKEDIN",
+    'contact.button.chat': "Let's chat on LinkedIn",
     'contact.button.mail': 'SEND AN EMAIL',
   },
 } as const;
