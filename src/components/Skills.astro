@@ -1,0 +1,23 @@
+---
+// Recibimos el nombre del icono de Simple Icons y el nombre de la herramienta
+interface Props {
+  icon: string;
+  name: string;
+}
+
+const { icon, name } = Astro.props;
+---
+
+<div class="group flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300">
+  <div class="relative">
+    <iconify-icon 
+      icon={icon} 
+      class="text-4xl text-neutral-500 group-hover:text-blue-500 group-hover:scale-125 transition-all duration-300 cursor-help"
+    ></iconify-icon>
+  </div>
+  <span class="text-[10px] font-mono uppercase tracking-tighter group-hover:opacity-100 text-neutral-400 transition-opacity">
+    {name}
+  </span>
+</div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>

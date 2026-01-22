@@ -1,25 +1,30 @@
 ---
-// Aquí podrías añadir lógica si fuera necesaria
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+// Detectamos el idioma actual desde la URL
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-[#050505]/60 backdrop-blur-xl">
   <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
     
-    <a href="/" class="text-white font-bold tracking-tighter text-xl hover:opacity-70 transition-opacity">
-      Leonardo<span class="text-blue-500">.</span>dev
+    <a href={`/${lang}/`} class="text-white font-bold tracking-tighter text-xl hover:opacity-70 transition-opacity">
+      LEONARDO<span class="text-blue-500">.dev</span>
     </a>
     
     <div class="flex gap-8 items-center">
       <div class="hidden md:flex gap-6">
-        <a href="#proyectos" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Proyectos</a>
-        <a href="#sobre-mi" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Sobre mí</a>
+        <a href={`/${lang}/#proyectos`} class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+          {t('nav.projects')}
+        </a>
       </div>
       
       <a 
-        href="leonardogarzon32@outlook.com" 
-        class="text-xs bg-white text-black px-4 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition-all duration-300"
+        href={lang === 'es' ? '/en/' : '/es/'} 
+        class="text-[10px] font-mono font-bold tracking-widest text-blue-400 border border-blue-400/30 px-2 py-1 rounded hover:bg-blue-400 hover:text-black transition-all"
       >
-        CONTACTO
+        {lang === 'es' ? 'SWITCH TO ENGLISH' : 'CAMBIAR A ESPAÑOL'}
       </a>
     </div>
 

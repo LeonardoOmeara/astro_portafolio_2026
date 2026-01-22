@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { useTranslations } from '../../i18n/utils';
+import CABRAppInicio from '../../assets/cabra2.jpeg';
+import esconditeWebInicio from '../../assets/escritorio_inicio.jpeg'
+import Skills from '../../components/Skills.astro'
+import ExperienceItem from '../../components/ExperienceItem.astro';
+
+
+// 1. Definimos qué idiomas existen para que Astro genere las páginas
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+// 2. Obtenemos el idioma de la URL actual
+const { lang } = Astro.params;
+const t = useTranslations(lang as any);
+---
+
+<Layout title="Leonardo Omeara | Portfolio">
+  <main class="max-w-5xl mx-auto px-6 pt-32">
+    <header class="py-20 space-y-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
+        {t('hero.title')}
+      </h1>
+      <p class="text-lg text-neutral-400 max-w-xl">
+        {t('hero.subtitle')}
+      </p>
+    </header>
+
+    <section id="proyectos" class="py-20">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
+        {t('projects.title')} _
+      </h2>
+
+        <ProjectCard 
+      title={t('project.capri.title')}
+      description={t('project.capri.desc')}
+      tags={["Flutter", "Supabase", "Dart"]}
+      image={CABRAppInicio}
+  />
+      <ProjectCard 
+          title={t('project.shortfilm.title')}
+          description={t('project.shortfilm.desc')}
+          tags={["HTML", "CSS", "JavaScript"]}
+          image={esconditeWebInicio}
+        />
+    </section>
+
+
+
+<section class="py-24 border-t border-white/5">
+  <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
+    {t('skills.title')} _
+  </h2>
+
+  <div class="space-y-16">
+    <div class="space-y-6">
+      <h3 class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4">{t('skills.dev')}</h3>
+      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+        <Skills icon="simple-icons:flutter" name="Flutter" />
+        <Skills icon="simple-icons:react" name="React" />
+        <Skills icon="simple-icons:nextdotjs" name="Next.js" />
+        <Skills icon="simple-icons:astro" name="Astro" />
+        <Skills icon="simple-icons:javascript" name="JavaScript" />
+        <Skills icon="simple-icons:typescript" name="TypeScript" />
+        <Skills icon="simple-icons:tailwindcss" name="Tailwind" />
+        <Skills icon="simple-icons:vite" name="Vite" />
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <h3 class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4">{t('skills.data')}</h3>
+      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+        <Skills icon="simple-icons:python" name="Python" />
+        <Skills icon="simple-icons:mysql" name="MySQL" />
+        <Skills icon="simple-icons:postgresql" name="PostgreSQL" />
+        <Skills icon="simple-icons:supabase" name="Supabase" />
+        <Skills icon="simple-icons:powerbi" name="Power BI" />
+        <Skills icon="simple-icons:sqlite" name="SQL" />
+        <Skills icon="simple-icons:git" name="Git" />
+        <Skills icon="simple-icons:amazons3" name="APIs" />
+      </div>
+    </div>
+  </div>
+</section>
+<section id="experiencia" class="py-24 border-t border-white/5">
+  <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
+    {t('exp.title')} _
+  </h2>
+
+  <div class="max-w-3xl">
+    <ExperienceItem 
+      date="02/2024 — 12/2024"
+      title={t('exp.adres.role')}
+      company="ADRES (Administradora de los Recursos del Sistema General de Seguridad Social en Salud)"
+      description={t('exp.adres.desc')}
+      stack={["SQL", "Python", "Power BI"]}
+    />
+
+    <ExperienceItem 
+      date="01/2022 — 07/2022"
+      title={t('exp.sbd.role')}
+      company="Stanley Black & Decker"
+      description={t('exp.sbd.desc')}
+      stack={["Python", "SQL", "APIs", "SSMS"]}
+    />
+
+    <ExperienceItem 
+      date="02/2021 — 10/2021"
+      title={t('exp.freelance.role')}
+      company="Freelance"
+      description={t('exp.freelance.desc')}
+      stack={["JavaScript", "HTML", "CSS"]}
+    />
+  </div>
+</section>
+  </main>
+</Layout>
