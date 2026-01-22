@@ -29,10 +29,10 @@ export const ui = {
     "exp.title": "Trayectoria Profesional",
     "exp.adres.role": "Desarrollador de Software & Analista de datos",
     "exp.adres.desc":
-      "Lideré la creación de scripts SQL para auditorías de salud, detectando +50,000 procesos. Optimicé dashboards en Power BI reduciendo retrasos en un 10%.",
+      "Desarrollo de scripts SQL para auditorías de salud, detectando +50,000 procesos. Optimicé dashboards en Power BI reduciendo retrasos en un 10%.",
     "exp.sbd.role": "Practicante en Automatizaciones",
     "exp.sbd.desc":
-      "Desarrollé scripts en Python para extracción de datos vía API y gestioné bases de datos SQL para el monitoreo de bots de alto rendimiento.",
+      "Desarrollé scripts en Python para extracción de datos vía API y gestioné bases de datos SQL para el monitoreo de bots.",
     "exp.freelance.role": "Developer Freelance",
     "exp.freelance.desc":
       "Diseño y desarrollo de plataformas web responsivas, incluyendo sistemas de recaudación de fondos para proyectos cinematográficos.",
@@ -66,7 +66,7 @@ export const ui = {
     "exp.title": "Professional Experience",
     "exp.adres.role": "Software Developer & Data Analyst",
     "exp.adres.desc":
-      "Led SQL script creation for health audits, detecting +50,000 processes. Optimized Power BI dashboards reducing process delays by 10%.",
+      "Developed a SQL script for health audits, detecting +50,000 processes. Optimized Power BI dashboards reducing process delays by 10%.",
     "exp.sbd.role": "Automation Intern",
     "exp.sbd.desc":
       "Developed Python scripts for API data extraction and managed SQL databases for high-performance bot monitoring.",
