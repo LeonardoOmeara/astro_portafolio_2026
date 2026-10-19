@@ -1,26 +1,4 @@
 ---
-// Redirect to /es/ or /en/ based on browser language using a small inline script.
+// src/pages/index.astro
 ---
-
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Leonardo Omeara | Portfolio</title>
-    <script>
-      (function () {
-        const supported = ['es', 'en'];
-        const defaultLang = 'es';
-        const browserLang = (navigator.language || navigator.userLanguage || defaultLang).toLowerCase().split('-')[0];
-        const lang = supported.includes(browserLang) ? browserLang : defaultLang;
-        window.location.replace('/' + lang + '/');
-      })();
-    </script>
-  </head>
-  <body>
-    <noscript>
-      <meta http-equiv="refresh" content="0;url=/es/" />
-      <p>Redirecting to <a href="/es/">/es/</a>...</p>
-    </noscript>
-  </body>
-</html>
+<meta http-equiv="refresh" content="0;url=/es/" />

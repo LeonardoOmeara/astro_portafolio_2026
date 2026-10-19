@@ -1,216 +1,232 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { useTranslations } from '../../i18n/utils';
-import CABRAppInicio from '../../assets/cabra2.jpeg';
-import esconditeWebInicio from '../../assets/escritorio_inicio.jpeg';
-import Skills from '../../components/Skills.astro';
-import ExperienceItem from '../../components/ExperienceItem.astro';
+import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { useTranslations } from "../../i18n/utils";
+import CABRAppInicio from "../../assets/cabra2.jpeg";
+import esconditeWebInicio from "../../assets/escritorio_inicio.jpeg";
+import Skills from "../../components/Skills.astro";
+import ExperienceItem from "../../components/ExperienceItem.astro";
 
+import cabrappPrincipal from "../../assets/cabrapp_portrait_main.png";
+import cabrapp3Devices from "../../assets/cabrapp_portrait_3_devices.png"; // Captura extra
+import cabrapp_2 from "../../assets/cabrapp_2.png";
+import cabrapp_3 from "../../assets/cabrapp_3.png";
+import cabrapp_4 from "../../assets/cabrapp_4.png";
+
+import esconditePrincipal from "../../assets/escondite_portrait_desktop_5_inclined.png";
+import escondite_1 from "../../assets/escondite_portrait_desktop_1.png";
+import escondite_2 from "../../assets/escondite_portrait_desktop_2.png";
+import escondite_3 from "../../assets/escondite_portrait_desktop_3.png";
+import escondite_4 from "../../assets/escondite_portrait_mobile_1.png";
+import escondite_5 from "../../assets/escondite_portrait_mobile_2.png";
+import escondite_6 from "../../assets/escondite_portrait_mobile_3.png";
+
+
+// 1. Definimos qué idiomas existen para que Astro genere las páginas
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'en' } },
-  ];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
+// 2. Obtenemos el idioma de la URL actual
 const { lang } = Astro.params;
 const t = useTranslations(lang as any);
-
-const strongestSkills = [
-  { icon: 'simple-icons:mysql', name: 'SQL' },
-  { icon: 'simple-icons:microsoftsqlserver', name: 'SQL Server' },
-  { icon: 'simple-icons:python', name: 'Python' },
-  { icon: 'simple-icons:git', name: 'Git' },
-  { icon: 'simple-icons:github', name: 'GitHub' },
-];
-
-const workingSkills = [
-  { icon: 'simple-icons:django', name: 'Django' },
-  { icon: 'simple-icons:azure', name: 'Azure Blob' },
-  { icon: 'simple-icons:javascript', name: 'JavaScript' },
-  { icon: 'simple-icons:mysql', name: 'MySQL' },
-  { icon: 'simple-icons:powerbi', name: 'Power BI' },
-  { icon: 'simple-icons:astro', name: 'Astro' },
-  { icon: 'simple-icons:docker', name: 'Docker' },
-  { icon: 'simple-icons:swagger', name: 'APIs' },
-];
-
-const foundationalSkills = [
-  { icon: 'simple-icons:react', name: 'React' },
-  { icon: 'simple-icons:nextdotjs', name: 'Next.js' },
-  { icon: 'simple-icons:flutter', name: 'Flutter' },
-  { icon: 'simple-icons:dart', name: 'Dart' },
-  { icon: 'simple-icons:postgresql', name: 'PostgreSQL' },
-  { icon: 'simple-icons:tailwindcss', name: 'Tailwind CSS' },
-];
 ---
 
-<Layout title={`Leonardo Omeara | ${t('hero.role')}`}>
+<Layout title="Leonardo Omeara | Portfolio">
   <main class="max-w-5xl mx-auto px-6 pt-32">
-    <header class="py-20 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-8 space-y-6">
-        <p class="text-sm font-mono text-blue-400 uppercase tracking-[0.2em]">
-          {t('hero.location')}
-        </p>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
-          {t('hero.title')}
-        </h1>
-        <p class="text-xl md:text-2xl font-medium text-white/90">
-          {t('hero.role')}
-        </p>
-        <p class="text-lg text-neutral-400 max-w-2xl">
-          {t('hero.subtitle')}
-        </p>
-      </div>
-
-      <div class="md:col-span-4 flex justify-center md:justify-end">
-        <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl border border-white/10 bg-neutral-900 flex items-center justify-center">
-          <span class="text-xs font-mono text-neutral-600 uppercase tracking-widest text-center px-4">
-            {lang === 'es' ? 'Espacio para foto' : 'Photo placeholder'}
-          </span>
-        </div>
-      </div>
+    <header class="py-20 space-y-6">
+      <h1
+        class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+      >
+        {t("hero.title")}
+      </h1>
+      <p class="text-lg text-neutral-400 max-w-xl">
+        {t("hero.subtitle")}
+      </p>
     </header>
 
-    <section id="sobre-mi" class="py-20 border-t border-white/5">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-8 italic">
-        {t('about.title')} _
-      </h2>
-      <p class="text-neutral-300 leading-relaxed text-lg max-w-3xl">
-        {t('about.text')}
-      </p>
-    </section>
-
-    <section id="proyectos" class="py-20 border-t border-white/5">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-        {t('projects.title')} _
+    <section id="proyectos" class="py-20 space-y-7">
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("projects.title")} _
       </h2>
 
       <ProjectCard
-        title={t('project.audit.title')}
-        description={t('project.audit.desc')}
-        tags={t('project.audit.tags').split(',')}
+        title={t("project.capri.title")}
+        description={t("project.capri.desc")}
+        tags={["Flutter", "Supabase", "Dart"]}
+        image={cabrapp3Devices}
+        galleryImages={[cabrappPrincipal, cabrapp_2, cabrapp_3, cabrapp_4]}
       />
-
       <ProjectCard
-        title={t('project.album.title')}
-        description={t('project.album.desc')}
-        tags={t('project.album.tags').split(',')}
-        link={t('project.album.link')}
-      />
-
-      <ProjectCard
-        title={t('project.cabrapp.title')}
-        description={t('project.cabrapp.desc')}
-        tags={t('project.cabrapp.tags').split(',')}
-        image={CABRAppInicio}
-      />
-
-      <ProjectCard
-        title={t('project.portfolio.title')}
-        description={t('project.portfolio.desc')}
-        tags={t('project.portfolio.tags').split(',')}
-        image={esconditeWebInicio}
+        title={t("project.shortfilm.title")}
+        description={t("project.shortfilm.desc")}
+        tags={["HTML", "CSS", "JavaScript"]}
+        image={esconditePrincipal}
+        galleryImages={[escondite_1, escondite_2,escondite_3, escondite_4, escondite_6 ]}
+        link="https://leonardoomeara.github.io/EsconditeParaDos/"
       />
     </section>
 
     <section id="habilidades" class="py-24 border-t border-white/5">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-        {t('skills.title')} _
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("skills.title")} _
       </h2>
 
       <div class="space-y-16">
         <div class="space-y-6">
-          <h3 class="text-xs font-semibold text-neutral-400 uppercase tracking-widest px-4">{t('skills.strongest')}</h3>
+          <h3
+            class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4"
+          >
+            {t("skills.dev")}
+          </h3>
           <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
-            {strongestSkills.map((skill) => <Skills icon={skill.icon} name={skill.name} />)}
+            <Skills icon="simple-icons:flutter" name="Flutter" />
+            <Skills icon="simple-icons:react" name="React" />
+            <Skills icon="simple-icons:nextdotjs" name="Next.js" />
+            <Skills icon="simple-icons:astro" name="Astro" />
+            <Skills icon="simple-icons:javascript" name="JavaScript" />
+            <Skills icon="simple-icons:typescript" name="TypeScript" />
+            <Skills icon="simple-icons:tailwindcss" name="Tailwind" />
+            <Skills icon="simple-icons:vite" name="Vite" />
           </div>
         </div>
 
         <div class="space-y-6">
-          <h3 class="text-xs font-semibold text-neutral-400 uppercase tracking-widest px-4">{t('skills.working')}</h3>
+          <h3
+            class="text-xs font-semibold text-neutral-600 uppercase tracking-widest px-4"
+          >
+            {t("skills.data")}
+          </h3>
           <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
-            {workingSkills.map((skill) => <Skills icon={skill.icon} name={skill.name} />)}
-          </div>
-        </div>
-
-        <div class="space-y-6">
-          <h3 class="text-xs font-semibold text-neutral-400 uppercase tracking-widest px-4">{t('skills.foundational')}</h3>
-          <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
-            {foundationalSkills.map((skill) => <Skills icon={skill.icon} name={skill.name} />)}
+            <Skills icon="simple-icons:python" name="Python" />
+            <Skills icon="simple-icons:mysql" name="MySQL" />
+            <Skills icon="simple-icons:postgresql" name="PostgreSQL" />
+            <Skills icon="simple-icons:supabase" name="Supabase" />
+            <Skills icon="simple-icons:powerbi" name="Power BI" />
+            <Skills icon="simple-icons:sqlite" name="SQL" />
+            <Skills icon="simple-icons:git" name="Git" />
+            <Skills icon="simple-icons:amazons3" name="APIs" />
           </div>
         </div>
       </div>
     </section>
-
     <section id="experiencia" class="py-24 border-t border-white/5">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic">
-        {t('experience.title')} _
+      <h2
+        class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-12 italic"
+      >
+        {t("exp.title")} _
       </h2>
 
       <div class="max-w-3xl">
         <ExperienceItem
-          period={t('exp.adres26.period')}
-          title={t('exp.adres26.role')}
-          company={t('exp.adres26.company')}
-          description={t('exp.adres26.desc')}
-          stack={t('exp.adres26.stack').split(',')}
+          date="02/2024 — 12/2024"
+          title={t("exp.adres.role")}
+          company="ADRES (Administradora de los Recursos del Sistema General de Seguridad Social en Salud)"
+          description={t("exp.adres.desc")}
+          stack={["SQL", "Python", "Power BI"]}
         />
 
         <ExperienceItem
-          period={t('exp.adres24.period')}
-          title={t('exp.adres24.role')}
-          company={t('exp.adres24.company')}
-          description={t('exp.adres24.desc')}
-          stack={t('exp.adres24.stack').split(',')}
+          date="01/2022 — 07/2022"
+          title={t("exp.sbd.role")}
+          company="Stanley Black & Decker"
+          description={t("exp.sbd.desc")}
+          stack={["Python", "SQL", "APIs", "SSMS"]}
         />
 
         <ExperienceItem
-          period={t('exp.sbd.period')}
-          title={t('exp.sbd.role')}
-          company={t('exp.sbd.company')}
-          description={t('exp.sbd.desc')}
-          stack={t('exp.sbd.stack').split(',')}
-        />
-
-        <ExperienceItem
-          period={t('exp.freelance.period')}
-          title={t('exp.freelance.role')}
-          company={t('exp.freelance.company')}
-          description={t('exp.freelance.desc')}
-          stack={t('exp.freelance.stack').split(',')}
+          date="02/2022 — Actual"
+          title={t("exp.freelance.role")}
+          company="Freelance"
+          description={t("exp.freelance.desc")}
+          stack={["JavaScript", "HTML", "CSS"]}
         />
       </div>
     </section>
 
-    <section id="contacto" class="py-24 border-t border-white/5">
-      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-[0.3em] mb-8 italic">
-        {t('contact.title')} _
-      </h2>
+    <section id="contacto" class="py-32 border-t border-white/5">
+      <div class="max-w-3xl mx-auto text-center space-y-8">
+        <h2
+          class="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] italic"
+        >
+          {t("contact.title")} _
+        </h2>
 
-      <div class="max-w-2xl">
-        <p class="text-neutral-300 text-lg leading-relaxed mb-8">
-          {t('contact.text')}
+        <h3
+          class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+        >
+          {t("contact.subtitle")}
+        </h3>
+
+        <p class="text-neutral-400 text-lg max-w-md mx-auto leading-relaxed">
+          {t("contact.description")}
         </p>
 
-        <div class="flex flex-wrap gap-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-4 pt-8"
+        >
           <a
             href="https://www.linkedin.com/in/leonardo-omeara/"
             target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors"
+            class="group relative px-8 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 w-full md:w-auto"
           >
-            {t('contact.linkedin')}
+            <span class="relative z-10">{t("contact.button.chat")}</span>
+            <div
+              class="absolute inset-0 bg-blue-500 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"
+            >
+            </div>
           </a>
+
+        </div>
+
+        <form
+          action="https://formspree.io/f/mqeevpgp"
+          method="POST"
+          class="max-w-md mx-auto space-y-4 mt-8"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder={lang === "es" ? "Tu correo" : "Your email"}
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <textarea
+            name="message"
+            placeholder={lang === "es"
+              ? "¿En qué puedo ayudarte?"
+              : "How can I help you?"}
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white h-32 focus:outline-none focus:border-blue-500 transition-colors"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-blue-500 hover:text-white transition-all cursor-pointer"
+          >
+            {lang === "es" ? "Enviar mensaje" : "Send message"}
+          </button>
+        </form>
+
+        <div
+          class="pt-20 flex justify-center gap-8 border-t border-white/5 mt-20"
+        >
           <a
             href="https://github.com/LeonardoOmeara"
             target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-white border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
+            class="text-neutral-500 hover:text-white text-sm font-mono transition-colors"
+            >GITHUB</a
           >
-            {t('contact.github')}
-          </a>
+          <a
+            href="https://www.linkedin.com/in/leonardo-omeara/"
+            target="_blank"
+            class="text-neutral-500 hover:text-white text-sm font-mono transition-colors"
+            >LINKEDIN</a
+          >
+          <span class="text-neutral-700 text-sm font-mono">/ 2026</span>
         </div>
       </div>
     </section>

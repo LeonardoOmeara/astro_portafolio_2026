@@ -7,169 +7,76 @@ export const defaultLang = 'es';
 
 export const ui = {
   es: {
-    'nav.about': 'Sobre mí',
-    'nav.projects': 'Proyectos',
-    'nav.experience': 'Experiencia',
-    'nav.skills': 'Habilidades',
-    'nav.contact': 'Contacto',
+    "nav.projects": "Proyectos",
+    "nav.about": "Sobre mí",
+    "hero.title": "Desarrollador de software / Analista de datos",
+    "hero.subtitle":
+      "Experiencia de 2 años como Analista de datos y desarrollador freelance desde el 2022. Aplicaciones rápidas con Flutter y soluciones web modernas.",
+    "projects.title": "Proyectos Destacados",
 
-    'hero.title': 'Leonardo Omeara',
-    'hero.role': 'Ingeniero de Sistemas y Desarrollador de Software',
-    'hero.subtitle':
-      'Desarrollo full-stack con enfoque en backend, SQL, datos y automatización de procesos.',
-    'hero.location': 'Bogotá, Colombia',
+    "project.capri.title": "CABRApp (Sistema de Inventario Caprino)",
+    "project.capri.desc": "App móvil para la gestión ganadera. Diseñé un sistema robusto con Flutter que permite el control total del inventario caprino: desde el registro detallado con toma de fotos hasta la exportación de reportes a Excel. Implementé una estructura de roles (Admin/Trabajador) vinculada a Supabase para garantizar la seguridad de los datos y una sincronización fluida en la nube.",
 
-    'about.title': 'Sobre mí',
-    'about.text':
-      'Construyo soluciones de software prácticas que conectan procesos de negocio, datos y automatización. Soy sólido en SQL, Python, desarrollo backend y trabajo colaborativo con Git/GitHub. Actualmente desarrollo en ADRES un motor de auditoría médica automatizada, y en paralelo mantengo proyectos personales con Astro y Flutter.',
+    "project.shortfilm.title": 'Sitio Web "Escondite para dos"',
+    "project.shortfilm.desc":
+      "Sitio web desarrollado para un equipo de producción audiovisual. El reto era crear un espacio que no solo publicitara el cortometraje, sino que sirviera como motor de recaudación de fondos (crowdfunding). Desarrollé un sistema dinámico para mostrar nuevos sponsors en tiempo real y aseguré una buena experiencia en dispositivos móviles para captar donantes en cualquier lugar.",
+    'projects.view_project': 'VER PROYECTO EN VIVO',
 
-    'projects.title': 'Proyectos destacados',
+    "skills.title": "Habilidades & Stack",
+    "skills.dev": "Desarrollo Frontend & Mobile",
+    "skills.data": "Análisis de Datos & Backend",
 
-    'project.audit.title': 'Motor de Auditoría Automatizada de Cuentas Médicas',
-    'project.audit.desc':
-      'Sistema interno de ADRES que procesa miles de reclamaciones de bajo costo comparando su información contra bases de datos SQL, tablas de referencia y reglas de negocio. Los soportes médicos se almacenan en Azure Blob Storage y se procesan con inteligencia artificial para extraer texto relevante y alimentar el resultado de auditoría, validado por auditores humanos.',
-    'project.audit.tags': 'Python,Django,SQL,Azure Blob Storage,IIS',
-
-    'project.album.title': 'Llena Tu Álbum',
-    'project.album.desc':
-      'Aplicación web personal para acompañar el álbum Panini del Mundial 2026. Permite llevar el progreso de pegatinas, filtrar faltantes y duplicados, y ofrece más opciones de registro que la experiencia tradicional del álbum físico.',
-    'project.album.tags': 'Astro,JavaScript,Supabase',
-    'project.album.link': 'https://llena-tu-album.vercel.app/',
-
-    'project.cabrapp.title': 'CABRApp — Inventario Caprino',
-    'project.cabrapp.desc':
-      'Aplicación multiplataforma desarrollada con Flutter para un cliente del sector agropecuario. Gestiona inventario, registros productivos y sincronización en la nube. Por acuerdo comercial no se publica el enlace del cliente; se muestran capturas y tecnologías de forma genérica.',
-    'project.cabrapp.tags': 'Flutter,Dart,Supabase',
-
-    'project.portfolio.title': 'Portafolio Personal',
-    'project.portfolio.desc':
-      'Sitio bilingüe construido con Astro y Tailwind CSS para presentar mi experiencia, proyectos y stack técnico de forma clara, rápida y accesible.',
-    'project.portfolio.tags': 'Astro,Tailwind CSS,TypeScript',
-
-    'experience.title': 'Experiencia',
-
-    'exp.adres26.role': 'Ingeniero de Sistemas y Desarrollador de Software',
-    'exp.adres26.company': 'ADRES',
-    'exp.adres26.period': 'Enero 2026 — Actualidad',
-    'exp.adres26.desc':
-      'Desarrollo y evolución de un motor de auditoría automatizada para cuentas médicas de bajo costo. Proceso miles de reclamaciones comparándolas contra bases de datos SQL, tablas de referencia y reglas de negocio. Integro Azure Blob Storage para soportes médicos y trabajo con equipos de negocio para alinear el sistema con procesos reales validados.',
-    'exp.adres26.stack': 'Python,Django,SQL,Azure Blob Storage,IIS,Power BI,Git',
-
-    'exp.adres24.role': 'Ingeniero de Sistemas y Analista de Datos',
-    'exp.adres24.company': 'ADRES',
-    'exp.adres24.period': 'Enero 2024 — Diciembre 2024',
-    'exp.adres24.desc':
-      'Análisis de datos y auditoría médica con SQL, Python y Power BI. Apoyo en la detección de inconsistencias y en la construcción de insumos para la toma de decisiones operativas.',
-    'exp.adres24.stack': 'SQL,Python,Power BI,SSMS',
-
-    'exp.sbd.role': 'Practicante en Automatizaciones',
-    'exp.sbd.company': 'Stanley Black & Decker',
-    'exp.sbd.period': 'Enero 2022 — Julio 2022',
-    'exp.sbd.desc':
-      'Scripts en Python para extracción de datos vía API y gestión de bases de datos SQL para monitoreo de automatizaciones.',
-    'exp.sbd.stack': 'Python,SQL,APIs',
-
-    'exp.freelance.role': 'Desarrollador Web Freelance',
-    'exp.freelance.company': 'Freelance',
-    'exp.freelance.period': '2021',
-    'exp.freelance.desc':
-      'Desarrollo de sitios web responsivos con JavaScript, HTML y CSS para pequeños proyectos y clientes locales.',
-    'exp.freelance.stack': 'JavaScript,HTML,CSS',
-
-    'skills.title': 'Habilidades y stack',
-    'skills.strongest': 'Fortalezas principales',
-    'skills.working': 'Conocimiento sólido',
-    'skills.foundational': 'Conocimiento complementario',
-
-    'contact.title': 'Contacto',
-    'contact.text':
-      'Si quieres conversar sobre un proyecto, una oportunidad o simplemente intercambiar ideas, puedes encontrarme aquí:',
-    'contact.linkedin': 'LinkedIn',
-    'contact.github': 'GitHub',
-
-    'footer.credit': 'Hecho con Astro y Tailwind CSS',
+    "exp.title": "Trayectoria Profesional",
+    "exp.adres.role": "Desarrollador de Software & Analista de datos",
+    "exp.adres.desc":
+      "Desarrollo de scripts SQL para auditorías de salud, detectando +50,000 procesos. Optimicé dashboards en Power BI reduciendo retrasos en un 10%.",
+    "exp.sbd.role": "Practicante en Automatizaciones",
+    "exp.sbd.desc":
+      "Desarrollé scripts en Python para extracción de datos vía API y gestioné bases de datos SQL para el monitoreo de bots.",
+    "exp.freelance.role": "Developer Freelance",
+    "exp.freelance.desc":
+      "Diseño y desarrollo de plataformas web responsivas, incluyendo sistemas de recaudación de fondos para proyectos cinematográficos.",
+    'contact.title': '¿Tienes un proyecto en mente?',
+    'contact.subtitle': 'TRABAJEMOS JUNTOS',
+    'contact.description': 'Actualmente estoy disponible para nuevos proyectos freelance y roles de análisis de datos.',
+    'contact.button.chat': 'Hablemos por LinkedIn',
+    'contact.button.mail': 'ENVIAR UN CORREO',
   },
+
   en: {
-    'nav.about': 'About',
-    'nav.projects': 'Projects',
-    'nav.experience': 'Experience',
-    'nav.skills': 'Skills',
-    'nav.contact': 'Contact',
+    "nav.projects": "Projects",
+    "nav.about": "About me",
+    "hero.title": "Software Developer / Data Analyst",
+    "hero.subtitle":
+      "2 years of experience as a Data Analyst and Freelance Developer since 2022. Building high-performance applications with Flutter and modern web solutions.",
+    "projects.title": "Featured Projects",
 
-    'hero.title': 'Leonardo Omeara',
-    'hero.role': 'Systems Engineer & Software Developer',
-    'hero.subtitle':
-      'Full-stack development with a focus on backend engineering, SQL, data, and process automation.',
-    'hero.location': 'Bogotá, Colombia',
+    "project.capri.title": "CABRApp (Caprine Inventory System)",
+    "project.capri.desc": "Comprehensive mobile app solution for livestock management. I designed a robust system using Flutter for full control of goat inventory: from detailed records with photo capture to Excel report exports. I implemented a role-based structure (Admin/Worker) linked to Supabase to ensure data security and seamless cloud synchronization.",
 
-    'about.title': 'About me',
-    'about.text':
-      'I build practical software solutions that connect business processes, data, and automation. My strongest areas are SQL, Python, backend development, and collaborative work with Git/GitHub. I currently develop an automated medical claims audit engine at ADRES, while maintaining personal projects with Astro and Flutter.',
+    "project.shortfilm.title": '"Escondite para dos" Short film website',
+    "project.shortfilm.desc":
+      "Web site designed for an audiovisual production team. The challenge was creating a space that not only promoted the short film but also functioned as a crowdfunding engine. I developed a dynamic system to showcase new sponsors in real-time and ensured a flawless mobile experience to engage donors anywhere.",
+    'projects.view_project': 'VIEW LIVE PROJECT',
 
-    'projects.title': 'Featured projects',
+    "skills.title": "Skills & Stack",
+    "skills.dev": "Frontend & Mobile Development",
+    "skills.data": "Data Analysis & Backend",
 
-    'project.audit.title': 'Automated Medical Claims Audit Engine',
-    'project.audit.desc':
-      'Internal ADRES system that processes thousands of low-cost medical claims, comparing claim data against SQL databases, reference tables, and business rules. Medical support documents are stored in Azure Blob Storage and processed with artificial intelligence to extract relevant text and feed the audit result, which is validated by human auditors.',
-    'project.audit.tags': 'Python,Django,SQL,Azure Blob Storage,IIS',
-
-    'project.album.title': 'Llena Tu Álbum',
-    'project.album.desc':
-      'Personal web app for tracking progress on the 2026 World Cup Panini-style album. It lets users track stickers, filter missing and duplicate ones, and offers more tracking options than the traditional physical album.',
-    'project.album.tags': 'Astro,JavaScript,Supabase',
-    'project.album.link': 'https://llena-tu-album.vercel.app/',
-
-    'project.cabrapp.title': 'CABRApp — Farm Inventory',
-    'project.cabrapp.desc':
-      'Cross-platform Flutter application built for an agricultural client. Manages inventory, productive records, and cloud synchronization. The client-facing URL is not published under agreement; only generic screenshots and technologies are shown.',
-    'project.cabrapp.tags': 'Flutter,Dart,Supabase',
-
-    'project.portfolio.title': 'Personal Portfolio',
-    'project.portfolio.desc':
-      'Bilingual site built with Astro and Tailwind CSS to present my experience, projects, and technical stack in a clear, fast, and accessible way.',
-    'project.portfolio.tags': 'Astro,Tailwind CSS,TypeScript',
-
-    'experience.title': 'Experience',
-
-    'exp.adres26.role': 'Systems Engineer & Software Developer',
-    'exp.adres26.company': 'ADRES',
-    'exp.adres26.period': 'January 2026 — Present',
-    'exp.adres26.desc':
-      'Develop and evolve an automated audit engine for low-cost medical claims. Process thousands of claims by comparing them against SQL databases, reference tables, and business rules. Integrate Azure Blob Storage for medical support documents and work with business teams to align the system with validated real-world processes.',
-    'exp.adres26.stack': 'Python,Django,SQL,Azure Blob Storage,IIS,Power BI,Git',
-
-    'exp.adres24.role': 'Systems Engineer & Data Analyst',
-    'exp.adres24.company': 'ADRES',
-    'exp.adres24.period': 'January 2024 — December 2024',
-    'exp.adres24.desc':
-      'Data analysis and medical auditing with SQL, Python, and Power BI. Supported inconsistency detection and built inputs for operational decision-making.',
-    'exp.adres24.stack': 'SQL,Python,Power BI,SSMS',
-
-    'exp.sbd.role': 'Automation Intern',
-    'exp.sbd.company': 'Stanley Black & Decker',
-    'exp.sbd.period': 'January 2022 — July 2022',
-    'exp.sbd.desc':
-      'Python scripts for API data extraction and SQL database management for automation monitoring.',
-    'exp.sbd.stack': 'Python,SQL,APIs',
-
-    'exp.freelance.role': 'Freelance Web Developer',
-    'exp.freelance.company': 'Freelance',
-    'exp.freelance.period': '2021',
-    'exp.freelance.desc':
-      'Development of responsive websites with JavaScript, HTML, and CSS for small projects and local clients.',
-    'exp.freelance.stack': 'JavaScript,HTML,CSS',
-
-    'skills.title': 'Skills & stack',
-    'skills.strongest': 'Strongest skills',
-    'skills.working': 'Working knowledge',
-    'skills.foundational': 'Foundational knowledge',
-
-    'contact.title': 'Contact',
-    'contact.text':
-      'If you want to talk about a project, an opportunity, or just exchange ideas, you can reach me here:',
-    'contact.linkedin': 'LinkedIn',
-    'contact.github': 'GitHub',
-
-    'footer.credit': 'Built with Astro and Tailwind CSS',
+    "exp.title": "Professional Experience",
+    "exp.adres.role": "Software Developer & Data Analyst",
+    "exp.adres.desc":
+      "Developed a SQL script for health audits, detecting +50,000 processes. Optimized Power BI dashboards reducing process delays by 10%.",
+    "exp.sbd.role": "Automation Intern",
+    "exp.sbd.desc":
+      "Developed Python scripts for API data extraction and managed SQL databases for high-performance bot monitoring.",
+    "exp.freelance.role": "Developer Freelance",
+    "exp.freelance.desc":
+      "Design and development of responsive web platforms, including fundraising systems for film projects.",
+    'contact.title': 'Have a project in mind?',
+    'contact.subtitle': "LET'S WORK TOGETHER",
+    'contact.description': 'I am currently available for new freelance projects and data analysis roles.',
+    'contact.button.chat': "Let's chat on LinkedIn",
+    'contact.button.mail': 'SEND AN EMAIL',
   },
 } as const;
