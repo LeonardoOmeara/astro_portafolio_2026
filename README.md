@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Leonardo Omeara — Portfolio
+
+Bilingual portfolio built with **Astro 5**, **Tailwind CSS 4**, and **TypeScript**.
+
+- **Live site:** https://leonardoomeara-portfolio.vercel.app/
+- **GitHub:** https://github.com/LeonardoOmeara/astro_portafolio_2026
+
+## About
+
+This is the personal portfolio of Leonardo Omeara, a Systems Engineer and Software Developer based in Bogotá, Colombia, focused on backend engineering, SQL, data, and process automation.
+
+The site is available in Spanish (`/es/`) and English (`/en/`). The root path redirects to the browser language.
+
+## Stack
+
+- Astro 5
+- Tailwind CSS 4
+- TypeScript
+- Iconify Simple Icons
+
+## Development
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Build
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deployment
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Vercel is connected to the `main` branch. Run `npm run build` locally before pushing to verify everything compiles.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Content
 
-## 🧞 Commands
+The portfolio highlights:
 
-All commands are run from the root of the project, from a terminal:
+- Automated medical claims audit engine at ADRES.
+- Personal project: Llena Tu Álbum for the 2026 World Cup.
+- CABRApp: cross-platform inventory application for an agricultural client.
+- This portfolio itself.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## License
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© Leonardo Omeara. Content and design for personal use.
